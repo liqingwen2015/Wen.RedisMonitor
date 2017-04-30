@@ -1,0 +1,125 @@
+﻿@model Wen.RedisMonitor.WebUI.Models.IndexViewModel
+
+<div>
+    <section class="content-header">
+        <h1>
+            Page Header
+            <small>Optional description</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+            <li class="active">Here</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <!-- right column -->
+            <div class="col-md-6">
+                <!-- general form elements disabled -->
+                <div class="box box-warning">
+
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <form role="form">
+                            <!-- select -->
+                            <div class="form-group col-md-6">
+                                <label>Select</label>
+                                <select id="sltSecond" class="form-control">
+                                    <option value="1">1s</option>
+                                    <option value="5">5s</option>
+                                    <option value="10">10s</option>
+                                    <option value="20">20s</option>
+                                    <option value="40">40s</option>
+                                    <option value="60">60s</option>
+                                </select>
+
+                            </div>
+
+                        </form>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <button id="btnReload" type="submit" class="btn btn-info ">刷新</button>
+                    </div>
+                </div>
+                <!-- /.box -->
+            </div>
+            <!--/.col (right) -->
+            <!-- /.box -->
+        </div>
+        <div class="row">
+            <!-- right column -->
+            <div class="col-md-6">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Bordered Table</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th style="width: 10px">Id</th>
+                                <th>地址</th>
+                                <th>连接状态</th>
+                                <th style="">响应时间</th>
+                            </tr>
+                            <tr>
+                                <td>@Model.ServerInfo.Id</td>
+                                <td>@Model.ServerInfo.HostAndPort</td>
+                                <td>@(Model.ServerInfo.IsConnected ? "成功" : "失败")</td>
+                                <td>@Model.ServerInfo.Pings.TotalMilliseconds</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!--/.col (right) -->
+            <!-- /.box -->
+        </div>
+
+        <h2 class="page-header">Reids 监控信息</h2>
+        <div class="row">
+            <div class="col-md-9">
+                <!-- Custom Tabs -->
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab_1" data-toggle="tab">原始信息</a></li>
+                        <li><a href="#tab_2" data-toggle="tab">详细信息</a></li>
+                        <li><a href="#tab_3" data-toggle="tab">客户端信息</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_1">
+                            <div id="baseInfoRaw"></div>
+                        </div>
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" id="tab_2">
+                            <div id="detailInfos"></div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" id="tab_3">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            It has survived not only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+                            sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+                            like Aldus PageMaker including versions of Lorem Ipsum.
+                        </div>
+                        <!-- /.tab-pane -->
+                    </div>
+                    <!-- /.tab-content -->
+                </div>
+                <!-- nav-tabs-custom -->
+            </div>
+            <!-- /.col -->
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+</div>
+
+<script src="~/scripts/core/home.js"></script>

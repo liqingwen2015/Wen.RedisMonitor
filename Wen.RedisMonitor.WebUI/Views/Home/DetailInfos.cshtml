@@ -1,0 +1,39 @@
+﻿@model IEnumerable<IGrouping<string, KeyValuePair<string, string>>>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-solid">
+            <div class="box-body">
+                <div class="box-group" id="accordion">
+                    <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
+                    @foreach (var modelServerDetailInfo in Model)
+                    {
+                        <div class="panel box box-primary">
+                            <div class="box-header with-border">
+                                <h4 class="box-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#@modelServerDetailInfo.Key">
+                                        @modelServerDetailInfo.Key
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="#@modelServerDetailInfo.Key" class="panel-collapse collapse in">
+                                <div class="box-body">
+                                    @foreach (var keyValuePair in modelServerDetailInfo)
+                                    {
+                                        <span>@keyValuePair.Key：</span>
+                                        <span>@keyValuePair.Value</span>
+                                        <br />
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+
+</div>
+

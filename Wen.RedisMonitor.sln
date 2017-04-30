@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wen.RedisMonitor.Core", "Wen.RedisMonitor.Core\Wen.RedisMonitor.Core.csproj", "{B2A61223-FA7F-4152-BF60-41C8B10A01B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wen.RedisMonitor.WebUI", "Wen.RedisMonitor.WebUI\Wen.RedisMonitor.WebUI.csproj", "{FE207435-9DF4-46F4-80EF-4829609F04C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wen.RedisMonitor.UnitTest", "Wen.RedisMonitor.UnitTest\Wen.RedisMonitor.UnitTest.csproj", "{98A8ABFF-4958-4E50-B467-C9C5A033E28E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2A61223-FA7F-4152-BF60-41C8B10A01B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2A61223-FA7F-4152-BF60-41C8B10A01B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2A61223-FA7F-4152-BF60-41C8B10A01B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2A61223-FA7F-4152-BF60-41C8B10A01B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE207435-9DF4-46F4-80EF-4829609F04C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE207435-9DF4-46F4-80EF-4829609F04C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE207435-9DF4-46F4-80EF-4829609F04C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE207435-9DF4-46F4-80EF-4829609F04C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98A8ABFF-4958-4E50-B467-C9C5A033E28E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98A8ABFF-4958-4E50-B467-C9C5A033E28E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98A8ABFF-4958-4E50-B467-C9C5A033E28E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98A8ABFF-4958-4E50-B467-C9C5A033E28E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
