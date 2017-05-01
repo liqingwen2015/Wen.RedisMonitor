@@ -4,46 +4,103 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StackExchange.Redis;
+using Wen.RedisMonitor.Core.Log;
 using Wen.RedisMonitor.Core.Models;
 
 namespace Wen.RedisMonitor.Core
 {
+    /// <summary>
+    /// Redis 监控 Helper
+    /// </summary>
     public class RedisMonitorHelper
     {
-        private readonly RedisHelper _redisHelper = new RedisHelper(_connectionString);
-        private static string _connectionString;
+        private readonly RedisHelper _redisHelper;
 
         public RedisMonitorHelper(string connectionString)
         {
-            _connectionString = connectionString;
+            try
+            {
+                _redisHelper = new RedisHelper(connectionString);
+            }
+            catch (Exception e)
+            {
+                MyLogger.Error($"{nameof(RedisMonitorHelper)} \r\n 异常：{e}");
+                throw;
+            }
         }
 
+        /// <summary>
+        /// 获取服务器信息对象
+        /// </summary>
+        /// <param name="hostAndPort"></param>
+        /// <returns></returns>
         public ServerInfo GetServerInfo(string hostAndPort)
         {
-            var server = GetServer(hostAndPort);
-
-            var serverInfo = new ServerInfo()
+            try
             {
-                HostAndPort = server.EndPoint.ToString(),
-                IsConnected = server.IsConnected,
-                Pings = server.Ping()
-            };
+                var server = GetServer(hostAndPort);
 
-            return serverInfo;
+                var serverInfo = new ServerInfo()
+                {
+                    HostAndPort = server.EndPoint.ToString(),
+                    IsConnected = server.IsConnected,
+                    Pings = server.Ping()
+                };
+
+                return serverInfo;
+            }
+            catch (Exception e)
+            {
+                MyLogger.Error($"{nameof(GetServerInfo)} \r\n 异常：{e}");
+                throw;
+            }
         }
 
+        /// <summary>
+        /// 获取原始信息
+        /// </summary>
+        /// <param name="hostAndPort"></param>
+        /// <returns></returns>
         public string GetInfoRaw(string hostAndPort)
         {
-            var server = GetServer(hostAndPort);
-            return server.InfoRaw();
+            try
+            {
+                var server = GetServer(hostAndPort);
+                return server.InfoRaw();
+            }
+            catch (Exception e)
+            {
+                MyLogger.Error($"{nameof(hostAndPort)} \r\n  异常：{e}");
+                throw;
+            }
+
         }
 
+        /// <summary>
+        /// 获取服务器信息集合
+        /// </summary>
+        /// <param name="hostAndPort"></param>
+        /// <returns></returns>
         public IGrouping<string, KeyValuePair<string, string>>[] GetInfo(string hostAndPort)
         {
-            var server = GetServer(hostAndPort);
-            return server.Info();
+            try
+            {
+                var server = GetServer(hostAndPort);
+                return server.Info();
+            }
+            catch (Exception e)
+            {
+                MyLogger.Error($"{nameof(GetInfo)} \r\n  异常：{e}");
+                throw;
+            }
+
         }
 
+        /// <summary>
+        /// 获取 Server 对象
+        /// </summary>
+        /// <param name="hostAndPort"></param>
+        /// <returns></returns>
         private IServer GetServer(string hostAndPort)
         {
             if (string.IsNullOrEmpty(hostAndPort))
@@ -51,15 +108,41 @@ namespace Wen.RedisMonitor.Core
                 throw new Exception("参数为空");
             }
 
-            return _redisHelper.GetServer(hostAndPort);
+            try
+            {
+                return _redisHelper.GetServer(hostAndPort);
+            }
+            catch (Exception e)
+            {
+                MyLogger.Error($"{nameof(GetServer)} \r\n  异常：{e}");
+                throw;
+            }
         }
 
+        /// <summary>
+        /// 获取客户信息集合
+        /// </summary>
+        /// <param name="hostAndPort"></param>
+        /// <returns></returns>
         public IEnumerable<RedisClientInfo> GetClients(string hostAndPort)
         {
-            var server = GetServer(hostAndPort);
-            return server.ClientList().Select(ConvertClientInfoToRedisClientInfo);
+            try
+            {
+                var server = GetServer(hostAndPort);
+                return server.ClientList().Select(ConvertClientInfoToRedisClientInfo);
+            }
+            catch (Exception e)
+            {
+                MyLogger.Error($"{nameof(GetClients)} \r\n  异常：{e}");
+                throw;
+            }
         }
 
+        /// <summary>
+        /// 将 ClientInfo 转换为 RedisClientInfo
+        /// </summary>
+        /// <param name="info"></param>
+        /// <returns></returns>
         private static RedisClientInfo ConvertClientInfoToRedisClientInfo(ClientInfo info)
         {
             return new RedisClientInfo()

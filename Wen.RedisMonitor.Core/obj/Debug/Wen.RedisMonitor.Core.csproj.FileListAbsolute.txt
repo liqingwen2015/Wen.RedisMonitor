@@ -5,3 +5,5 @@ C:\Users\Wen\Documents\Projects\OpenSources\Wen.RedisMonitor\Wen.RedisMonitor.Co
 C:\Users\Wen\Documents\Projects\OpenSources\Wen.RedisMonitor\Wen.RedisMonitor.Core\bin\Debug\StackExchange.Redis.dll
 C:\Users\Wen\Documents\Projects\OpenSources\Wen.RedisMonitor\Wen.RedisMonitor.Core\bin\Debug\StackExchange.Redis.xml
 C:\Users\Wen\Documents\Projects\OpenSources\Wen.RedisMonitor\Wen.RedisMonitor.Core\obj\Debug\Wen.RedisMonitor.Core.csprojResolveAssemblyReference.cache
+C:\Users\Wen\Documents\Projects\OpenSources\Wen.RedisMonitor\Wen.RedisMonitor.Core\bin\Debug\log4net.dll
+C:\Users\Wen\Documents\Projects\OpenSources\Wen.RedisMonitor\Wen.RedisMonitor.Core\bin\Debug\log4net.xml

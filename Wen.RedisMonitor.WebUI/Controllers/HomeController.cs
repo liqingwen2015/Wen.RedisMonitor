@@ -30,6 +30,10 @@ namespace Wen.RedisMonitor.WebUI.Controllers
             return View(vm);
         }
 
+        /// <summary>
+        /// 原始信息
+        /// </summary>
+        /// <returns></returns>
         public PartialViewResult BaseInfoRaw()
         {
             var infoRaw = _redisMonitorHelper.GetInfoRaw(RedisHostAndPort).Replace("\r\n","<br />");
@@ -37,6 +41,10 @@ namespace Wen.RedisMonitor.WebUI.Controllers
             return PartialView((object) infoRaw);
         }
 
+        /// <summary>
+        /// 详细信息
+        /// </summary>
+        /// <returns></returns>
         public PartialViewResult DetailInfos()
         {
             var detailInfos = _redisMonitorHelper.GetInfo(RedisHostAndPort);
@@ -44,6 +52,10 @@ namespace Wen.RedisMonitor.WebUI.Controllers
             return PartialView(detailInfos);
         }
 
+        /// <summary>
+        /// 客户端信息
+        /// </summary>
+        /// <returns></returns>
         public PartialViewResult ClientInfos()
         {
             var detailInfos = _redisMonitorHelper.GetClients(RedisHostAndPort);

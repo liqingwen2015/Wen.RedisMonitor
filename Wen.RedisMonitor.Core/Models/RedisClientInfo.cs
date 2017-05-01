@@ -7,6 +7,9 @@ using StackExchange.Redis;
 
 namespace Wen.RedisMonitor.Core.Models
 {
+    /// <summary>
+    /// Redis 客户端信息
+    /// </summary>
     public class RedisClientInfo
     {
 

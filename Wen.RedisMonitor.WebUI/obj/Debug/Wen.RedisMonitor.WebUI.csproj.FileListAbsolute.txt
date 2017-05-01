@@ -54,3 +54,5 @@ C:\Users\Wen\Documents\Projects\OpenSources\Wen.RedisMonitor\Wen.RedisMonitor.We
 C:\Users\Wen\Documents\Projects\OpenSources\Wen.RedisMonitor\Wen.RedisMonitor.WebUI\obj\Debug\Wen.RedisMonitor.WebUI.pdb
 C:\Users\Wen\Documents\Projects\OpenSources\Wen.RedisMonitor\Wen.RedisMonitor.WebUI\bin\StackExchange.Redis.dll
 C:\Users\Wen\Documents\Projects\OpenSources\Wen.RedisMonitor\Wen.RedisMonitor.WebUI\bin\StackExchange.Redis.xml
+C:\Users\Wen\Documents\Projects\OpenSources\Wen.RedisMonitor\Wen.RedisMonitor.WebUI\bin\log4net.dll
+C:\Users\Wen\Documents\Projects\OpenSources\Wen.RedisMonitor\Wen.RedisMonitor.WebUI\bin\log4net.xml
