@@ -45,5 +45,28 @@ namespace Wen.RedisMonitor.UnitTest
 
             Console.WriteLine(info);
         }
+
+
+        [TestMethod]
+        public void GetRedisClientInfos()
+        {
+            var clients = RedisMonitorHelper.GetClients("127.0.0.1:6379");
+            foreach (var redisClientInfo in clients)
+            {
+                Console.WriteLine("==========");
+                Console.WriteLine(redisClientInfo.AgeSeconds);
+                Console.WriteLine(redisClientInfo.Database);
+                Console.WriteLine(redisClientInfo.Host);
+                Console.WriteLine(redisClientInfo.IdleSeconds);
+                Console.WriteLine(redisClientInfo.LastCommand);
+                Console.WriteLine(redisClientInfo.PatternSubscriptionCount);
+                Console.WriteLine(redisClientInfo.Port);
+                Console.WriteLine(redisClientInfo.SubscriptionCount);
+                Console.WriteLine(redisClientInfo.TransactionCommandLength);
+                Console.WriteLine("==========");
+
+            }
+
+        }
     }
 }

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Wen.RedisMonitor.Core.Models.RedisClientInfo>
+
+<div class="row">
+    <!-- right column -->
+    <div class="col-md-12">
+        <div class="box">
+            <!-- /.box-header -->
+            <div class="box-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th title="客户机的主机">主机</th>
+                            <th title="端口">端口</th>
+                            <th title="连接的总持续时间以秒为单位">连接的总持续时间（s）</th>
+                            <th title="当前的数据库ID">当前的数据库ID</th>
+                            <th title="连接的空闲时间(单位秒)">连接的空闲时间(s)</th>
+                            <th title="最后一个命令中">最后一个命令中</th>
+                            <th title="订阅数量">订阅数量</th>
+                            <th title="订阅频道数量">订阅频道数量</th>
+                            <th title="执行事务的命令数量">执行事务的命令数量</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr class="info">
+                                    <td>@item.Host</td>
+                                    <td>@item.Port</td>
+                                    <td>@(item.AgeSeconds)s</td>
+                                    <td>@item.Database</td>
+                                    <td>@(item.IdleSeconds)s</td>
+                                    <td>@item.LastCommand</td>
+                                    <td>@item.PatternSubscriptionCount</td>
+                                    <td>@item.SubscriptionCount</td>
+                                    <td>@item.TransactionCommandLength</td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>暂无客户端连接</td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+    <!--/.col (right) -->
+    <!-- /.box -->
+</div>

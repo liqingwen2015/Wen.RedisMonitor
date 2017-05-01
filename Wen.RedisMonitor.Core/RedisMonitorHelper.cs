@@ -53,5 +53,28 @@ namespace Wen.RedisMonitor.Core
 
             return _redisHelper.GetServer(hostAndPort);
         }
+
+        public IEnumerable<RedisClientInfo> GetClients(string hostAndPort)
+        {
+            var server = GetServer(hostAndPort);
+            return server.ClientList().Select(ConvertClientInfoToRedisClientInfo);
+        }
+
+        private static RedisClientInfo ConvertClientInfoToRedisClientInfo(ClientInfo info)
+        {
+            return new RedisClientInfo()
+            {
+                AgeSeconds = info.AgeSeconds,
+                Database = info.Database,
+                Host = info.Host,
+                IdleSeconds = info.IdleSeconds,
+                LastCommand = info.LastCommand,
+                PatternSubscriptionCount = info.PatternSubscriptionCount,
+                Port = info.Port,
+                Raw = info.Raw,
+                SubscriptionCount = info.SubscriptionCount,
+                TransactionCommandLength = info.TransactionCommandLength
+            };
+        }
     }
 }

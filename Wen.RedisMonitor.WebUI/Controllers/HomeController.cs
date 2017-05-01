@@ -44,5 +44,12 @@ namespace Wen.RedisMonitor.WebUI.Controllers
             return PartialView(detailInfos);
         }
 
+        public PartialViewResult ClientInfos()
+        {
+            var detailInfos = _redisMonitorHelper.GetClients(RedisHostAndPort);
+
+            return PartialView(detailInfos);
+        }
+
     }
 }

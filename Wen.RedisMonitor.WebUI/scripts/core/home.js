@@ -1,4 +1,5 @@
-﻿//重新刷新页面
+﻿
+//重新刷新页面
 function reloadPage() {
     location.reload();
 }
@@ -12,13 +13,13 @@ function loadPartialHtml(ele, url) {
         });
 }
 
-loadPartialHtml($('#baseInfoRaw'), "/home/BaseInfoRaw");
-loadPartialHtml($('#detailInfos'), "/home/detailInfos");
-
 function timeoutRefresh() {
     loadPartialHtml($('#baseInfoRaw'), "/home/BaseInfoRaw");
     loadPartialHtml($('#detailInfos'), "/home/detailInfos");
+    loadPartialHtml($('#clientInfos'), "/home/clientInfos");
 }
+
+timeoutRefresh();
 
 $('#btnReload').click(function () {
     reloadPage();
@@ -26,3 +27,4 @@ $('#btnReload').click(function () {
 
 setInterval("timeoutRefresh()",
     $("#sltSecond").val() * 1000);
+

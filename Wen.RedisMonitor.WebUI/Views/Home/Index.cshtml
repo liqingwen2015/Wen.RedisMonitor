@@ -3,8 +3,8 @@
 <div>
     <section class="content-header">
         <h1>
-            Page Header
-            <small>Optional description</small>
+            首页
+            <small>监控信息</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -27,7 +27,7 @@
                                 <label>Select</label>
                                 <select id="sltSecond" class="form-control">
                                     <option value="1">1s</option>
-                                    <option value="5">5s</option>
+                                    <option value="5" selected="selected">5s</option>
                                     <option value="10">10s</option>
                                     <option value="20">20s</option>
                                     <option value="40">40s</option>
@@ -53,7 +53,7 @@
             <div class="col-md-6">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Bordered Table</h3>
+                        <h3 class="box-title">Redis 连接信息</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -101,13 +101,7 @@
                         </div>
                         <!-- /.tab-pane -->
                         <div class="tab-pane" id="tab_3">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries, but also the leap into electronic typesetting,
-                            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                            sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                            like Aldus PageMaker including versions of Lorem Ipsum.
+                            <div id="clientInfos"></div>
                         </div>
                         <!-- /.tab-pane -->
                     </div>
